@@ -78,21 +78,20 @@ environment = SubResource("Environment_b0k67")
 halflife = 0.3
 check_environment = false
 
-[node name="AI Controller" parent="AI Rin" index="4"]
+[node name="AI Controller" parent="AI Rin" index="3"]
 speed = 1.0
 
-[node name="NavigationAgent3D" parent="AI Rin" index="5"]
+[node name="NavigationAgent3D" parent="AI Rin" index="4"]
 path_desired_distance = 0.5
 debug_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="AI Rin"]
 transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 7.97426, 0)
 
-[node name="DebugDrawTrajectory" type="Node" parent="." node_paths=PackedStringArray("character", "controller", "anim_player")]
+[node name="DebugDrawTrajectory" type="Node" parent="." node_paths=PackedStringArray("character", "controller")]
 script = ExtResource("5_n32hv")
 character = NodePath("../AI Rin/rin/Armature/Skeleton3D")
 controller = NodePath("../AI Rin")
-anim_player = NodePath("../AI Rin/MMAnimationPlayer")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_ohbto")
