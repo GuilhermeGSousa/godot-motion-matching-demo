@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 		DebugDraw3D.draw_position(controller.transform, Color.TOMATO)
 	
 	_draw_trajectory(controller.get_trajectory(), Color.AQUAMARINE)
-	_draw_trajectory(controller.get_previous_trajectory(), Color.AQUA)
+	_draw_trajectory(controller.get_trajectory_history(), Color.AQUA)
 
 	var forward = controller.global_basis.z
 	DebugDraw3D.draw_arrow(controller.global_position, controller.global_position + forward * 0.5, Color.DARK_SLATE_BLUE, .1)
