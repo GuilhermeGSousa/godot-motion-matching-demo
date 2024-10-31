@@ -34,28 +34,28 @@ future_frames = 4
 
 [resource]
 _data = {
-&"Armature_Armature_021_WalkStopTurnPivot1_Layer0": ExtResource("21_xwagg"),
-&"Armature_Armature_015_Snake1_Layer0": ExtResource("15_4fywb"),
 &"Armature_Armature_002_Circles1_Layer0": ExtResource("2_wh157"),
-&"Armature_Armature_009_JumpsFreeRoam1_Layer0": ExtResource("9_0mglt"),
-&"Armature_Armature_017_Walk1_Layer0": ExtResource("17_a6p6p"),
 &"Armature_Armature_013_Run1_Layer0": ExtResource("13_tywwh"),
-&"Armature_Armature_012_Pushes1_Layer0": ExtResource("12_bvwvk"),
 &"Armature_Armature_010_MixedLocomotion1_Layer0": ExtResource("10_ctody"),
 &"Armature_Armature_003_Crouching1_Layer0": ExtResource("3_3ffad"),
-&"Armature_Armature_018_Walk2_Layer0": ExtResource("18_ymp28"),
 &"Armature_Armature_001_Acceleration1_Layer0": ExtResource("1_74q0v"),
 &"Armature_Armature_022_WalkTurns1_Layer0": ExtResource("22_lw4hy"),
 &"Armature_Armature_004_FreeRoaming1_Layer0": ExtResource("4_681u8"),
+&"Armature_Armature_012_Pushes1_Layer0": ExtResource("12_bvwvk"),
+&"Armature_Armature_018_Walk2_Layer0": ExtResource("18_ymp28"),
 &"Armature_Armature_005_FreeRoaming2_Layer0": ExtResource("5_0wm6m"),
-&"Armature_Armature_020_WalkStopTurn1_Layer0": ExtResource("20_jxvom"),
+&"Armature_Armature_015_Snake1_Layer0": ExtResource("15_4fywb"),
+&"Armature_Armature_021_WalkStopTurnPivot1_Layer0": ExtResource("21_xwagg"),
+&"Armature_Armature_009_JumpsFreeRoam1_Layer0": ExtResource("9_0mglt"),
+&"Armature_Armature_017_Walk1_Layer0": ExtResource("17_a6p6p"),
 &"Armature_Armature_014_RunPivotTurn1_Layer0": ExtResource("14_pvd0i"),
 &"Armature_Armature_008_Jumps1_Layer0": ExtResource("8_bponi"),
-&"Armature_Armature_019_WalkPivotTurn1_Layer0": ExtResource("19_senha"),
-&"Armature_Armature_016_TurnOnSpot1_Layer0": ExtResource("16_mtab6"),
-&"Armature_Armature_006_Jog1_Layer0": ExtResource("6_5sh2t"),
 &"Armature_Armature_011_OutofRange1_Layer0": ExtResource("11_3s8wb"),
-&"Armature_Armature_007_JogPivotTurn1_Layer0": ExtResource("7_dsnrl")
+&"Armature_Armature_020_WalkStopTurn1_Layer0": ExtResource("20_jxvom"),
+&"Armature_Armature_007_JogPivotTurn1_Layer0": ExtResource("7_dsnrl"),
+&"Armature_Armature_016_TurnOnSpot1_Layer0": ExtResource("16_mtab6"),
+&"Armature_Armature_019_WalkPivotTurn1_Layer0": ExtResource("19_senha"),
+&"Armature_Armature_006_Jog1_Layer0": ExtResource("6_5sh2t")
 }
 features = Array[MMFeature]([SubResource("MMTrajectoryFeature_tj6dm")])
 sampling_rate = 5.0
