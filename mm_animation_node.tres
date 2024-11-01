@@ -1,3 +1,4 @@
-[gd_resource type="MMAnimationNode" format=3 uid="uid://rimkektu3ybi"]
+[gd_resource type="MMAnimationNode" format=3 uid="uid://dy7tite1l45tf"]
 
 [resource]
+library = &"rin_anim_lib"

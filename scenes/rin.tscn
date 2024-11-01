@@ -1,15 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://1io8uso2bop2"]
+[gd_scene load_steps=8 format=3 uid="uid://1io8uso2bop2"]
 
 [ext_resource type="PackedScene" uid="uid://bjpmux7mfthoa" path="res://animation/rin.fbx" id="2_0oumo"]
 [ext_resource type="MMAnimationLibrary" uid="uid://ci0xd77t1swxb" path="res://animation/rin_anim_lib.tres" id="3_j41h7"]
+[ext_resource type="MMAnimationNode" uid="uid://dy7tite1l45tf" path="res://mm_animation_node.tres" id="4_1uxhd"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="4_ojh51"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nhkn4"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_e64fr"]
 
-[sub_resource type="MMAnimationNode" id="MMAnimationNode_unefn"]
-animation_library = ExtResource("3_j41h7")
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_d5cxs"]
+graph_offset = Vector2(-147.27, 4.6424)
+nodes/MMAnimationNode/node = ExtResource("4_1uxhd")
+nodes/MMAnimationNode/position = Vector2(80, 140)
+node_connections = [&"output", 0, &"MMAnimationNode"]
 
 [node name="Simulation Entity" type="MMCharacter" node_paths=PackedStringArray("skeleton", "animation_tree")]
 skeleton = NodePath("rin/Armature/Skeleton3D")
@@ -552,7 +556,6 @@ character = NodePath("..")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../rin")
 root_motion_track = NodePath("Armature/Skeleton3D:root")
-callback_mode_process = 0
 libraries = {
 &"rin_anim_lib": ExtResource("3_j41h7")
 }
@@ -560,11 +563,10 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../rin")
 root_motion_track = NodePath("Armature/Skeleton3D:root")
-callback_mode_process = 0
-tree_root = SubResource("MMAnimationNode_unefn")
+tree_root = SubResource("AnimationNodeBlendTree_d5cxs")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/motion_matching_input = Object(MMQueryInput,"script":null)
+parameters/MMAnimationNode/motion_matching_input = Object(MMQueryInput,"script":null)
 
 
 [editable path="rin"]

@@ -76,29 +76,6 @@ history_delta_time = 0.1
 [node name="Skeleton3D" parent="Rin/rin/Armature" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, -1.62921e-07, 0, 1.62921e-07, 1, 0, 0, 0)
 top_level = true
-bones/2/rotation = Quaternion(0.707107, 0.707107, -2.24765e-08, 5.33851e-08)
-bones/3/rotation = Quaternion(-2.11228e-15, 3.17865e-08, -1.98523e-23, 1)
-bones/4/rotation = Quaternion(2.02821e-22, 1.24345e-14, 3.55271e-15, 1)
-bones/5/rotation = Quaternion(7.88861e-31, -1.65436e-24, -1.46937e-39, 1)
-bones/6/rotation = Quaternion(-0.706103, 0.00746496, 0.00748541, 0.708031)
-bones/7/rotation = Quaternion(-0.369214, 0.0289388, 0.0529891, 0.927381)
-bones/8/rotation = Quaternion(-1.64559e-08, 7.68569e-08, -0.317305, 0.948324)
-bones/9/rotation = Quaternion(-2.13496e-07, 9.20255e-08, 1.68266e-08, 1)
-bones/49/rotation = Quaternion(-4.23597e-09, -7.73535e-11, -0.0967358, 0.99531)
-bones/50/rotation = Quaternion(5.83539e-15, -1.16035e-15, 1.45437e-07, 1)
-bones/51/rotation = Quaternion(0.707107, 0.707107, 2.23666e-08, -5.33851e-08)
-bones/213/rotation = Quaternion(-0.00748536, 0.708031, 0.706103, 0.00746492)
-bones/214/rotation = Quaternion(-0.371793, -0.0316657, -0.0603453, 0.925811)
-bones/215/rotation = Quaternion(0.00288059, -0.000969191, 0.324726, 0.945803)
-bones/216/rotation = Quaternion(3.17108e-07, -1.44965e-07, 9.2542e-08, 1)
-bones/217/rotation = Quaternion(-0.211558, 0.862738, -0.454331, -0.0671535)
-bones/256/rotation = Quaternion(0.954014, -0.299763, 3.03248e-08, 2.26315e-08)
-bones/272/rotation = Quaternion(0.00907023, 0.00905068, 0.707814, 0.706282)
-bones/273/rotation = Quaternion(1.89507e-08, -9.66699e-07, 0.0292355, 0.999573)
-bones/274/rotation = Quaternion(-0.0140665, -0.00738198, -0.517486, 0.855544)
-bones/281/rotation = Quaternion(0.707814, -0.706282, 0.00907016, -0.00905055)
-bones/282/rotation = Quaternion(2.60608e-07, -8.93613e-06, -0.0292356, 0.999573)
-bones/283/rotation = Quaternion(-0.0140664, 0.00738204, 0.517486, 0.855544)
 
 [node name="PlayerController" parent="Rin" index="3" node_paths=PackedStringArray("camera_pivot")]
 jump_speed = 6.0
