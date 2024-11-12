@@ -40,10 +40,6 @@ func _draw_animation_trajectory(trajectory : Array[Dictionary], color : Color, d
 	for p in trajectory:
 		var pos = p["position"]
 		DebugDraw3D.draw_sphere(pos, 0.01, color)
-		
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("switch_anim"):
-		controller.is_strafing = !controller.is_strafing
 
 func _on_query_result(data : Dictionary):
 	var result_data = data["frame_data"]

@@ -11,7 +11,7 @@
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_d5cxs"]
 nodes/MMAnimationNode/node = ExtResource("4_1uxhd")
-nodes/MMAnimationNode/position = Vector2(80, 140)
+nodes/MMAnimationNode/position = Vector2(60, 140)
 node_connections = [&"output", 0, &"MMAnimationNode"]
 
 [node name="Simulation Entity" type="MMCharacter" node_paths=PackedStringArray("skeleton", "animation_tree")]
@@ -550,6 +550,7 @@ animation_path = NodePath("../AnimationPlayer")
 
 [node name="PlayerController" type="Node" parent="." node_paths=PackedStringArray("character")]
 script = ExtResource("4_ojh51")
+max_speed = 2.0
 character = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
