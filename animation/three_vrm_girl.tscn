@@ -1,22 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://dli82nshgyn7b"]
+[gd_scene load_steps=6 format=3 uid="uid://dli82nshgyn7b"]
 
 [ext_resource type="PackedScene" uid="uid://bln7i4fm67rok" path="res://animation/three_vrm_girl_scene.tscn" id="1_gxjw1"]
-[ext_resource type="MMAnimationNode" uid="uid://dy7tite1l45tf" path="res://animation/mm_animation_node.tres" id="4_2hr2p"]
 [ext_resource type="MMAnimationLibrary" uid="uid://cho1e8snyyga2" path="res://animation/vrm_motion_library.tres" id="5_rbw15"]
 
-[sub_resource type="MMRootMotionSynchronizer" id="MMRootMotionSynchronizer_1nvcm"]
+[sub_resource type="MMMixSynchronizer" id="MMMixSynchronizer_17lck"]
+root_motion_amount = 0.35
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dg77c"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_gxjw1"]
-nodes/MMAnimationNode/node = ExtResource("4_2hr2p")
-nodes/MMAnimationNode/position = Vector2(80, 140)
-node_connections = [&"output", 0, &"MMAnimationNode"]
+[sub_resource type="MMAnimationNode" id="MMAnimationNode_17lck"]
+library = &"vrm_motion_library"
 
 [node name="ThreeVRMGirl" type="MMCharacter" node_paths=PackedStringArray("skeleton", "animation_tree")]
 skeleton = NodePath("three-vrm-girl/Root_/GeneralSkeleton")
 animation_tree = NodePath("three-vrm-girl/AnimationTree")
-synchronizer = SubResource("MMRootMotionSynchronizer_1nvcm")
+synchronizer = SubResource("MMMixSynchronizer_17lck")
 history_delta_time = 0.1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -34,6 +32,9 @@ blend_shapes/Face.M_F00_000_00_Fcl_EYE_Extra = 0.99999
 [node name="EyeExtra" parent="three-vrm-girl/Root_/GeneralSkeleton" index="4"]
 blend_shapes/EyeExtra_01.M_F00_000_00_EyeExtra_On = 0.99999
 
+[node name="Head" parent="three-vrm-girl/Root_/GeneralSkeleton" index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000217668, 1.37182, -0.00799575)
+
 [node name="AnimationPlayer" parent="three-vrm-girl" index="1"]
 root_motion_track = NodePath("%GeneralSkeleton:Root")
 libraries = {
@@ -42,10 +43,10 @@ libraries = {
 
 [node name="AnimationTree" type="AnimationTree" parent="three-vrm-girl"]
 root_motion_track = NodePath("%GeneralSkeleton:Root")
-tree_root = SubResource("AnimationNodeBlendTree_gxjw1")
+tree_root = SubResource("MMAnimationNode_17lck")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/MMAnimationNode/motion_matching_input = Object(MMQueryInput,"script":null)
+parameters/motion_matching_input = Object(MMQueryInput,"script":null)
 
 
 [editable path="three-vrm-girl"]
