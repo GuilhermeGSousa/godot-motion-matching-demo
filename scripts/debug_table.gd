@@ -10,9 +10,10 @@ var cells: Array[TableCell] = []
 func _ready() -> void:
 	for c in table.get_children():
 		c.queue_free()
-	var node : MMAnimationNode = animation_tree.get("tree_root")
+	var node : MMAnimationNode = animation_tree.get("tree_root/MMAnimationNode")
 	table.columns = 4
-	node.on_query_result.connect(_on_query_result)
+	if node:
+		node.on_query_result.connect(_on_query_result)
 	
 func _on_query_result(data: Dictionary):
 

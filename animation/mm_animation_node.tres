@@ -1,5 +1,4 @@
 [gd_resource type="MMAnimationNode" format=3 uid="uid://dy7tite1l45tf"]
 
 [resource]
-filters = ["Armature/Skeleton3D:root"]
-library = &"rin_anim_lib"
+library = &"vrm_motion_library"
