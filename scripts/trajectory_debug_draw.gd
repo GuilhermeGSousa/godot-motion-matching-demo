@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 		DebugDraw3D.draw_position(controller.transform, Color.TOMATO)
 	
 	_draw_trajectory(controller.get_trajectory(), Color.AQUAMARINE)
-	_draw_trajectory(controller.get_previous_trajectory(), Color.AQUA)
+	_draw_trajectory(controller.get_trajectory_history(), Color.AQUA)
 
 	var forward = controller.global_basis.z
 	DebugDraw3D.draw_arrow(controller.global_position, controller.global_position + forward * 0.5, Color.DARK_SLATE_BLUE, .1)
@@ -40,10 +40,6 @@ func _draw_animation_trajectory(trajectory : Array[Dictionary], color : Color, d
 	for p in trajectory:
 		var pos = p["position"]
 		DebugDraw3D.draw_sphere(pos, 0.01, color)
-		
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("switch_anim"):
-		controller.is_strafing = !controller.is_strafing
 
 func _on_query_result(data : Dictionary):
 	var result_data = data["frame_data"]

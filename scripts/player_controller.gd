@@ -6,6 +6,12 @@ extends Node
 @export var camera_pivot: Node3D
 
 func _physics_process(delta: float) -> void:
+	if !camera_pivot:
+		printerr("No Camera Pivot.")
+		return
+	if !character:
+		printerr("No Character.")
+		return
 	var stick_input = Input.get_vector("left", "right", "down", "up")
 	var stick_input_world = Vector3(-stick_input.x, 0, stick_input.y)
 	var desired_velocity = (stick_input_world * max_speed).rotated(Vector3.UP, camera_pivot.rotation.y)
@@ -14,3 +20,6 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump") and character.is_on_floor():
 		character.velocity += Vector3.UP * jump_speed
+		
+	if event.is_action_pressed("toggle_strafe"):
+		character.is_strafing = !character.is_strafing
