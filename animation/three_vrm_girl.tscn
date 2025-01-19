@@ -7,7 +7,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dg77c"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_t7ajx"]
-graph_offset = Vector2(-5.72957, -4.0192)
+graph_offset = Vector2(-59.1336, -26.2159)
 nodes/MMAnimationNode/node = ExtResource("3_1nvcm")
 nodes/MMAnimationNode/position = Vector2(0, 140)
 node_connections = [&"output", 0, &"MMAnimationNode"]
@@ -20,18 +20,23 @@ history_delta_time = 0.1
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_dg77c")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="RootMotionView" type="RootMotionView" parent="."]
 animation_path = NodePath("../three-vrm-girl/AnimationTree")
 
 [node name="three-vrm-girl" parent="." instance=ExtResource("1_gxjw1")]
 
+[node name="GeneralSkeleton" parent="three-vrm-girl/Root_" index="0"]
+motion_scale = 1.0
+
 [node name="Face" parent="three-vrm-girl/Root_/GeneralSkeleton" index="1"]
 blend_shapes/Face.M_F00_000_00_Fcl_EYE_Extra = 0.99999
 
 [node name="EyeExtra" parent="three-vrm-girl/Root_/GeneralSkeleton" index="4"]
 blend_shapes/EyeExtra_01.M_F00_000_00_EyeExtra_On = 0.99999
+
+[node name="Head" parent="three-vrm-girl/Root_/GeneralSkeleton" index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000217668, 1.37182, -0.00799575)
 
 [node name="AnimationPlayer" parent="three-vrm-girl" index="1"]
 root_motion_track = NodePath("%GeneralSkeleton:Root")
