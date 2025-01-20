@@ -1,4 +1,4 @@
-extends Node
+class_name PlayerController extends Node
 
 @export var max_speed = 3.0
 @export var jump_speed = 3.0

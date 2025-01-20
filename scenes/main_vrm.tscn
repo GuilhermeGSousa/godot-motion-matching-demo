@@ -1,10 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://husqm4tb6bev"]
+[gd_scene load_steps=13 format=3 uid="uid://husqm4tb6bev"]
 
 [ext_resource type="PackedScene" uid="uid://cjhit7pg3fwuo" path="res://scenes/debug_table.tscn" id="1_cpbqa"]
 [ext_resource type="Texture2D" uid="uid://bubooafum5q7l" path="res://textures/grid_texture.png" id="1_yaac5"]
 [ext_resource type="PackedScene" uid="uid://dli82nshgyn7b" path="res://animation/three_vrm_girl.tscn" id="3_272bh"]
-[ext_resource type="Script" uid="uid://bnutt7qw8d3i0" path="res://scripts/trajectory_debug_draw.gd" id="5_gaa5p"]
-[ext_resource type="Script" uid="uid://gh7lf1uliwjy" path="res://scripts/bone_state_debug_draw.gd" id="6_1vha1"]
 [ext_resource type="Script" uid="uid://bqboknd4vl2bc" path="res://scripts/player_controller.gd" id="7_11alb"]
 [ext_resource type="Script" uid="uid://dkk1gsih4p05l" path="res://scripts/pause_manager.gd" id="7_jd0hs"]
 [ext_resource type="PackedScene" uid="uid://b542pai5xpeq3" path="res://scenes/camera_pivot.tscn" id="8_4brei"]
@@ -46,7 +44,6 @@ environment = SubResource("Environment_b0k67")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_gwaaa")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
@@ -63,7 +60,6 @@ mesh = SubResource("BoxMesh_pd4xa")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
 transform = Transform3D(11.0225, 0, 0, 0, 3.04705, 0, 0, 0, 1, 0, -0.467445, 0)
 shape = SubResource("ConcavePolygonShape3D_cgbp0")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="Ramp" type="StaticBody3D" parent="."]
 transform = Transform3D(0.990983, 3.94138e-10, 0.133986, 0.133986, -5.85672e-09, -0.990983, 3.94138e-10, 1, -5.85672e-09, 11.7576, 0.150306, -0.824014)
@@ -75,25 +71,12 @@ mesh = SubResource("BoxMesh_pd4xa")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp"]
 transform = Transform3D(11.0225, 0, 0, 0, 3.04705, 0, 0, 0, 1, 0, -0.467445, 0)
 shape = SubResource("ConcavePolygonShape3D_cgbp0")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="ThreeVRMGirl" parent="." instance=ExtResource("3_272bh")]
 synchronizer = SubResource("MMMixSynchronizer_4brei")
 
 [node name="Head" parent="ThreeVRMGirl/three-vrm-girl/Root_/GeneralSkeleton" index="9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000217668, 1.37182, -0.00799575)
-
-[node name="DebugDrawTrajectory" type="Node" parent="." node_paths=PackedStringArray("character", "controller", "anim_player")]
-script = ExtResource("5_gaa5p")
-character = NodePath("../ThreeVRMGirl")
-controller = NodePath("../ThreeVRMGirl")
-anim_player = NodePath("../ThreeVRMGirl/three-vrm-girl/AnimationPlayer")
-display_trajectory_facing = true
-display_trajectory_velocity = true
-
-[node name="DebugDrawBoneState" type="Node" parent="." node_paths=PackedStringArray("character")]
-script = ExtResource("6_1vha1")
-character = NodePath("../ThreeVRMGirl")
 
 [node name="Pause Manager" type="Node" parent="."]
 process_mode = 3
