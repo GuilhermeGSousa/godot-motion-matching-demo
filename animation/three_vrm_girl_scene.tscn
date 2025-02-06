@@ -1,9 +1,9 @@
 [gd_scene load_steps=67 format=3 uid="uid://bln7i4fm67rok"]
 
 [ext_resource type="PackedScene" uid="uid://bfpit2pdy3nqp" path="res://animation/three-vrm-girl.vrm" id="1_addg8"]
-[ext_resource type="Script" path="res://addons/vrm/vrm_spring_bone.gd" id="2_ho88t"]
-[ext_resource type="Script" path="res://addons/vrm/vrm_collider_group.gd" id="3_x6fhy"]
-[ext_resource type="Script" path="res://addons/vrm/vrm_collider.gd" id="4_u4pl1"]
+[ext_resource type="Script" uid="uid://diuei7ynldeok" path="res://addons/vrm/vrm_spring_bone.gd" id="2_ho88t"]
+[ext_resource type="Script" uid="uid://3fiohn8ptrkm" path="res://addons/vrm/vrm_collider_group.gd" id="3_x6fhy"]
+[ext_resource type="Script" uid="uid://cpt6yrsunohlv" path="res://addons/vrm/vrm_collider.gd" id="4_u4pl1"]
 
 [sub_resource type="Resource" id="Resource_oy107"]
 resource_name = "Head"

@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://husqm4tb6bev"]
+[gd_scene load_steps=14 format=3 uid="uid://husqm4tb6bev"]
 
 [ext_resource type="PackedScene" uid="uid://cjhit7pg3fwuo" path="res://scenes/debug_table.tscn" id="1_cpbqa"]
 [ext_resource type="Texture2D" uid="uid://bubooafum5q7l" path="res://textures/grid_texture.png" id="1_yaac5"]
+[ext_resource type="Script" uid="uid://dxii4wn62tnr4" path="res://scripts/debug_character.gd" id="2_11alb"]
 [ext_resource type="PackedScene" uid="uid://dli82nshgyn7b" path="res://animation/three_vrm_girl.tscn" id="3_272bh"]
 [ext_resource type="Script" uid="uid://bqboknd4vl2bc" path="res://scripts/player_controller.gd" id="7_11alb"]
 [ext_resource type="Script" uid="uid://dkk1gsih4p05l" path="res://scripts/pause_manager.gd" id="7_jd0hs"]
@@ -28,10 +29,15 @@ root_motion_amount = 0.45
 
 [node name="main" type="Node3D"]
 
-[node name="DebugTable" parent="." node_paths=PackedStringArray("animation_tree") instance=ExtResource("1_cpbqa")]
+[node name="DebugTable" parent="." node_paths=PackedStringArray("character") instance=ExtResource("1_cpbqa")]
 offset_right = -167.0
 offset_bottom = -490.0
-animation_tree = NodePath("../ThreeVRMGirl/three-vrm-girl/AnimationTree")
+character = NodePath("../ThreeVRMGirl")
+
+[node name="DebugCharacter" type="Node" parent="." node_paths=PackedStringArray("character")]
+script = ExtResource("2_11alb")
+character = NodePath("../ThreeVRMGirl")
+metadata/_custom_type_script = ExtResource("2_11alb")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.676876, 0.736097, 0, -0.736097, -0.676876, 0, 0, 0)
@@ -74,6 +80,7 @@ shape = SubResource("ConcavePolygonShape3D_cgbp0")
 
 [node name="ThreeVRMGirl" parent="." instance=ExtResource("3_272bh")]
 synchronizer = SubResource("MMMixSynchronizer_4brei")
+emit_result_signal = true
 
 [node name="Head" parent="ThreeVRMGirl/three-vrm-girl/Root_/GeneralSkeleton" index="9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000217668, 1.37182, -0.00799575)

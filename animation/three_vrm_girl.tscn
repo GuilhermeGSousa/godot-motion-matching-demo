@@ -7,7 +7,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dg77c"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_t7ajx"]
-graph_offset = Vector2(-59.1336, -26.2159)
 nodes/MMAnimationNode/node = ExtResource("3_1nvcm")
 nodes/MMAnimationNode/position = Vector2(0, 140)
 node_connections = [&"output", 0, &"MMAnimationNode"]
