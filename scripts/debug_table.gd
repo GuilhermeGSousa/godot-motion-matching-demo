@@ -1,22 +1,20 @@
 extends Control
 
-@export var animation_tree: AnimationTree
+@export var character: MMCharacter
 @export var title_scene: PackedScene
 @export var cell_scene: PackedScene
-@export var table : GridContainer
+@export var table: GridContainer
 
 var cells: Array[TableCell] = []
 
 func _ready() -> void:
 	for c in table.get_children():
 		c.queue_free()
-	var node : MMAnimationNode = animation_tree.get("tree_root/MMAnimationNode")
 	table.columns = 4
-	if node:
-		node.on_query_result.connect(_on_query_result)
 	
-func _on_query_result(data: Dictionary):
+	character.on_query_result.connect(_on_query_result)
 
+func _on_query_result(data: Dictionary):
 	for c in cells:
 		c.queue_free()
 	cells.clear()
