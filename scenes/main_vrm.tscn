@@ -37,7 +37,7 @@ character = NodePath("../ThreeVRMGirl")
 [node name="DebugCharacter" type="Node" parent="." node_paths=PackedStringArray("character")]
 script = ExtResource("2_11alb")
 character = NodePath("../ThreeVRMGirl")
-metadata/_custom_type_script = ExtResource("2_11alb")
+metadata/_custom_type_script = "uid://dxii4wn62tnr4"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.676876, 0.736097, 0, -0.736097, -0.676876, 0, 0, 0)
